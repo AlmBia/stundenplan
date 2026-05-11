@@ -112,8 +112,20 @@ def parse_table(table, current_year: int):
 
     headers = first_row.find_all("td", class_="week_header")
     day_dates: dict[int, date] = {}
+    col_to_day: dict[int, int] = {}
     months_seen: list[int] = []
+    # Erste Spalte ist week_number (col 0), Tage starten bei col 1
+    cur_col = 1
     for day_idx, hdr in enumerate(headers):
+        try:
+            hdr_cs = int(hdr.get("colspan", 1) or 1)
+        except ValueError:
+            hdr_cs = 1
+        # Diese Spalten gehören zu diesem Tag
+        for c in range(cur_col, cur_col + hdr_cs):
+            col_to_day[c] = day_idx
+        cur_col += hdr_cs
+
         txt = hdr.get_text(" ", strip=True)
         m = re.search(r"(\d{1,2})\.(\d{1,2})\.", txt)
         if m:
@@ -149,7 +161,7 @@ def parse_table(table, current_year: int):
 
             classes = cell.get("class") or []
             if "week_block" in classes:
-                day_idx = (col_idx - 1) // 3 if col_idx >= 1 else -1
+                day_idx = col_to_day.get(col_idx, -1)
                 event_date = day_dates.get(day_idx)
                 if event_date:
                     parsed = parse_block(cell, event_date)
