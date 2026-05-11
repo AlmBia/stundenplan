@@ -1,0 +1,8 @@
+# Eine Zeile pro Stichwort. Alles, was im Titel oder Beschreibung
+# eines Termins vorkommt, fliegt raus (Groß-/Kleinschreibung egal).
+# Zeilen mit # werden ignoriert.
+
+# Beispiele - anpassen / löschen:
+Wahlfach Französisch
+BWL-Vertiefung
+Sport
