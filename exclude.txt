@@ -3,6 +3,7 @@
 # Zeilen mit # werden ignoriert.
 
 # Beispiele - anpassen / löschen:
-Maschine Learning 
+Grundlagen des Machine Learning 
+Anwendungs- Aspekte des Machine Learning
 Neue Konzepte I - KI, Führung und Ethik
 
