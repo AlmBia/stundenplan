@@ -4,6 +4,5 @@
 
 # Beispiele - anpassen / löschen:
 Grundlagen des Machine Learning 
-Anwendungs- Aspekte des Machine Learning
 Neue Konzepte I - KI, Führung und Ethik
-
+Anwendungs-Aspekte des Machine Learning 
