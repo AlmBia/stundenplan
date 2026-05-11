@@ -3,6 +3,4 @@
 # Zeilen mit # werden ignoriert.
 
 # Beispiele - anpassen / löschen:
-Wahlfach Französisch
-BWL-Vertiefung
-Sport
+
